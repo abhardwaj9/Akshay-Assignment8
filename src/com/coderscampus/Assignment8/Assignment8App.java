@@ -2,10 +2,13 @@ package com.coderscampus.Assignment8;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 public class Assignment8App {
 	public static void main(String[] args) {
@@ -33,5 +36,16 @@ public class Assignment8App {
 		
 		System.out.println("Done getting all 1,000,000 numbers");		
 		System.out.println("This number should be one million: " + allNumbers.size());
+		
+		Map<Integer, Integer> output = new HashMap<>();
+		allNumbers.stream()
+		          .forEach(number -> {
+		        	  if (!output.containsKey(number)) {
+		        		  output.put(number, 1);
+		        	  } else {
+		        		  output.put(number, output.get(number) + 1);
+		        	  }
+		          });
+		System.out.println(output);
 	}
 }
