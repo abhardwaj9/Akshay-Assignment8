@@ -10,7 +10,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
-public class Assignment8App {
+public class Assignment8Application {
 	public static void main(String[] args) {
 		Assignment8 assignment8 = new Assignment8();
 		
@@ -37,6 +37,7 @@ public class Assignment8App {
 		System.out.println("Done getting all 1,000,000 numbers");		
 		System.out.println("This number should be one million: " + allNumbers.size());
 		
+// This is the "For Loop" way of doing things
 		Map<Integer, Integer> output = new HashMap<>();
 		allNumbers.stream()
 		          .forEach(number -> {
@@ -47,5 +48,7 @@ public class Assignment8App {
 		        	  }
 		          });
 		System.out.println(output);
+		
+		
 	}
 }
