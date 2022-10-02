@@ -37,7 +37,7 @@ public class Assignment8Application {
 		System.out.println("Done getting all 1,000,000 numbers");		
 		System.out.println("This number should be one million: " + allNumbers.size());
 		
-// This is the "For Loop" way of doing things
+
 		Map<Integer, Integer> output = new HashMap<>();
 		allNumbers.stream()
 		          .forEach(number -> {
